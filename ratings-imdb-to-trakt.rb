@@ -1,10 +1,11 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 #Encoding: UTF-8
 
+require 'rubygems'
 require 'pp'
+require 'csv'
 require 'curb-fu'
 require 'json'
-require 'csv'
 
 TRAKT_APIKEY = ARGV[0]
 TRAKT_USERNAME = ARGV[1]
@@ -34,6 +35,6 @@ header['username'] = TRAKT_USERNAME
 header['password'] = TRAKT_PASSWORD
 header['movies'] = movies
 
-response = CurbFu.post('http://api.trakt.tv/rate/movies/ec27e70bb0578395e1e0527cb44124f4', JSON[header])
+response = CurbFu.post('http://api.trakt.tv/rate/movies/'+TRAKT_APIKEY, JSON[header])
 
 pp JSON.parse(response.body)
