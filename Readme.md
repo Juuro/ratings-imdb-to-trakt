@@ -1,4 +1,4 @@
-This script imports [IMDb](http://www.imdb.com) ratings to [trakt.tv](http://trakt.tv).
+This script imports [IMDb](http://www.imdb.com) ratings to [trakt.tv](http://trakt.tv). It supports [advanced ratings](http://trakt.tv/api-docs/ratings).
 
 ##Requirements:
 [Ruby](http://www.ruby-doc.org) with the following gems:
