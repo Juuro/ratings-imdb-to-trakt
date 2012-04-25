@@ -28,3 +28,7 @@ Assuming the the project ruby@gmeset is 1.9.2-p290@projectX then calling:
 will return:
 
 	/Users/juuro/.rvm/environments/ruby-1.9.2-p290
+
+So your command for cron would be:
+
+	source /Users/juuro/.rvm/environments/ruby-1.9.2-p290; ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id
