@@ -17,7 +17,7 @@ To hash your trakt password in SHA1 you can use this website: [http://jssha.sour
 	ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id
 
 ##Usage as cron:
-Crontab doesn't load your environment files by default. So you have to load it first.
+[Cron](http://en.wikipedia.org/wiki/Cron) doesn't load your environment files by default. So you have to load it first.
 
 	source /path/to/your/environment/files; ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id
 
