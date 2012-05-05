@@ -6,6 +6,7 @@ This script imports [IMDb](http://www.imdb.com) ratings to [trakt.tv](http://tra
 * [curb-fu](http://rubygems.org/gems/curb-fu)
 * [json](http://rubygems.org/gems/json)
 * csv
+* open-uri
 
 You need accounts at IMDb and trakt.tv, of course.
 
