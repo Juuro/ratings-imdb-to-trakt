@@ -1,4 +1,7 @@
 This script imports [IMDb](http://www.imdb.com) ratings to [trakt.tv](http://trakt.tv). It supports [advanced ratings](http://trakt.tv/api-docs/ratings).
+At the moment this method will not sent out any social updates.
+
+If you unrate a movie on IMDb, the rating on trakt will be removed, too.
 
 ##Requirements:
 [Ruby](http://www.ruby-doc.org) with the following gems:
