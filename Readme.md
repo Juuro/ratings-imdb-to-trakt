@@ -1,5 +1,4 @@
 This script imports [IMDb](http://www.imdb.com) ratings to [trakt.tv](http://trakt.tv). It supports [advanced ratings](http://trakt.tv/api-docs/ratings).
-At the moment this method will not sent out any social updates.
 
 If you unrate a movie on IMDb, the rating on trakt will be removed, too.
 
@@ -18,7 +17,9 @@ Your trakt API key is available at [http://trakt.tv/api-docs/authentication](htt
 To hash your trakt password in SHA1 you can use this website: [http://jssha.sourceforge.net](http://jssha.sourceforge.net).
 
 ##Usage:
-	ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id
+	ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id [nosocial]
+
+If you use "nosocial" as fourth attribute, your ratings won't be send out as social updates to facebook, twitter, and tumblr. This is recommended for the initial ratings-import.
 
 ##Usage as cron:
 [Cron](http://en.wikipedia.org/wiki/Cron) doesn't load your environment files by default. So you have to load it first.
