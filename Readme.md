@@ -19,7 +19,7 @@ To hash your trakt password in SHA1 you can use this website: [http://jssha.sour
 ##Usage:
 	ruby ratings-imdb-to-trakt.rb trakt-api-key trakt-username trakt-password-in-sha1 imdb-id [nosocial]
 
-If you use "nosocial" as fourth attribute, your ratings won't be send out as social updates to facebook, twitter, and tumblr. This is recommended for the initial ratings-import.
+If you use "nosocial" as fourth attribute, your ratings won't be send out as social updates to facebook, twitter, and tumblr. This is recommended for the initial ratings-import. The default setting is with social updates.
 
 ##Usage as cron:
 [Cron](http://en.wikipedia.org/wiki/Cron) doesn't load your environment files by default. So you have to load it first.
