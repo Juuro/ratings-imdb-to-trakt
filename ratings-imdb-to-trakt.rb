@@ -35,11 +35,6 @@ watchlist.each do |line|
 
 	movies[movie['imdb_id']] = movie.to_hash
 	
-	if movie['imdb_id'] == "tt1661461"
-		pp 'Wrong data for this movie in trakt: '+movie['imdb_id']
-		movies.delete(movie['imdb_id'])
-	end
-	
 	#rate only if the rating is different
 	existingRatings.each do |thisMovie|
 		if thisMovie['imdb_id'] == movie['imdb_id']
