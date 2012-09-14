@@ -34,7 +34,7 @@ watchlist.each do |line|
 	movie['rating'] = line[8]
 
 	movies[movie['imdb_id']] = movie.to_hash
-	
+
 	#rate only if the rating is different
 	existingRatings.each do |thisMovie|
 		if thisMovie['imdb_id'] == movie['imdb_id']
@@ -47,17 +47,18 @@ end
 
 #unrate if no longer rated in IMDb
 existingRatings.each do |thisMovie|
-	if watchlist_imdb.body.include?(thisMovie['imdb_id']) == false
-		
-		movie = Hash.new
-		movie['username'] = TRAKT_USERNAME
-		movie['password'] = TRAKT_PASSWORD
-		movie['imdb_id'] = thisMovie['imdb_id']
-		movie['title'] = thisMovie['title']
-		movie['year'] = thisMovie['year']
-		movie['rating'] = 0
-		
-		movies[movie['imdb_id']] = movie.to_hash
+	if !thisMovie['imdb_id'].nil?
+		if watchlist_imdb.body.include?(thisMovie['imdb_id']) == false		
+			movie = Hash.new
+			movie['username'] = TRAKT_USERNAME
+			movie['password'] = TRAKT_PASSWORD
+			movie['imdb_id'] = thisMovie['imdb_id']
+			movie['title'] = thisMovie['title']
+			movie['year'] = thisMovie['year']
+			movie['rating'] = 0
+
+			movies[movie['imdb_id']] = movie.to_hash
+		end
 	end
 end
 
@@ -69,9 +70,9 @@ if SOCIAL == "nosocial"
 	header['username'] = TRAKT_USERNAME
 	header['password'] = TRAKT_PASSWORD
 	header['movies'] = movies
-	
+
 	response = CurbFu.post('http://api.trakt.tv/rate/movies/'+TRAKT_APIKEY, JSON[header])
-	
+
 	pp JSON.parse(response.body)
 elsif
 	# uses http://trakt.tv/api-docs/rate-movie to rate
