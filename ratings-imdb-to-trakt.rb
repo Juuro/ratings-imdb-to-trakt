@@ -45,6 +45,11 @@ watchlist.each do |line|
 	movie['rating'] = line[8]
 	movie['type'] = line[6].unpack("U*").pack("U*")
 
+	#ignore tv episodes
+	if ( movie['type'] == "TV Episode" )
+		next
+	end
+
 	movies[movie['imdb_id']] = movie.to_hash
 
 	#rate only if the rating is different
@@ -87,7 +92,7 @@ def importList(items)
 			next
 		end
 		
-		if ( thisItem['type'] == "TV Series" )
+		if ( thisItem['type'] == "TV Series" || thisItem['type'] == "Mini-Series" )
 			type = "show"
 		else
 			type = "movie"
