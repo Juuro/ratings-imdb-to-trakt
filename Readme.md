@@ -12,8 +12,9 @@ If you unrate a movie on IMDb, the rating on trakt will be removed, too.
 
 You need accounts at IMDb and trakt.tv, of course.
 
-You can grab your IMDb-ID from the URL if you visit [http://www.imdb.com/profile/lists](http://www.imdb.com/profile/lists), for example. It's the **ur00000000**-Part.
-Your trakt API key is available at [http://trakt.tv/api-docs/authentication](http://trakt.tv/api-docs/authentication).
+* You can grab your IMDb-ID from the URL if you visit [http://www.imdb.com/profile/lists](http://www.imdb.com/profile/lists), for example. It's the **ur00000000**-Part.  
+Make sure your ratings list is made public to allow the script to download your IMDb ratings!
+* Your trakt API key is available at [http://trakt.tv/api-docs/authentication](http://trakt.tv/api-docs/authentication).  
 To hash your trakt password in SHA1 you can use this website: [http://jssha.sourceforge.net](http://jssha.sourceforge.net).
 
 ##Usage:
